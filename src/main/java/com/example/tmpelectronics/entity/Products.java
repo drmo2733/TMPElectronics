@@ -28,7 +28,7 @@ public class Products {
     private String model;
     private String brand;
 
-    @OneToOne
+    @ManyToOne
     private Category category;
 
     @ManyToOne
