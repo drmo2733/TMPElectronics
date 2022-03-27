@@ -1,7 +1,10 @@
 package com.example.tmpelectronics.config;
 
 import com.example.tmpelectronics.security.UserDetailsImpl;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
     private UserDetailsImpl userDetails;
 
     @Override
@@ -21,7 +25,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .and()
                 .authorizeRequests()
-                .anyRequest().authenticated();
+                .antMatchers(HttpMethod.GET, "/").permitAll();
     }
 
     @Override
