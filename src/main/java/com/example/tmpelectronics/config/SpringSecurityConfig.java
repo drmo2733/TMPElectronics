@@ -23,6 +23,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .formLogin()
+                .loginPage("/checkout")
+                .loginProcessingUrl("/perform-login")
+                .usernameParameter("email")
+                .defaultSuccessUrl("/myAccount")
                 .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/").permitAll();
@@ -38,4 +42,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+    public Boolean doPasswordsMatch(String rawPassword,String encodedPassword) {
+        return passwordEncoder().matches(rawPassword, encodedPassword);
+    }
+
 }
