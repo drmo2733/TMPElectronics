@@ -65,9 +65,8 @@
 								<ul class="language">
 									<li><a href="#"><img class="right-5" src="/img/flags/gb.png" alt="#">English<i class="fa fa-caret-down left-5"></i></a>
 										<ul>
-											<li><a href="#"><img class="right-5" src="/img/flags/fr.png" alt="#">French</a></li>
-											<li><a href="#"><img class="right-5" src="/img/flags/gb.png" alt="#">English</a></li>
-											<li><a href="#"><img class="right-5" src="/img/flags/gb.png" alt="#">English</a></li>
+											<li><a href="?lang=ru"><img class="right-5" src="/img/flags/ru.png" alt="#">Russian</a></li>
+											<li><a href="?lang=en"><img class="right-5" src="/img/flags/gb.png" alt="#">English</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -112,8 +111,8 @@
 									<div class="support-content">
 										<i class="fa fa-clock-o"></i>
 										<div class="support-text">
-											<h1 class="zero gfont-1">working time</h1>
-											<p>Mon- Sun: 8.00 - 18.00</p>
+											<h1 class="zero gfont-1" th:text="#{main.working.time}"></h1>
+											<p th:text="#{main.working.days}"></p>
 										</div>
 									</div>
 								</div>
@@ -124,8 +123,8 @@
 								<div class="single-support">
 									<i class="fa fa-truck"></i>
 									<div class="support-text">
-										<h1 class="zero gfont-1">Free shipping</h1>
-										<p>On order over $199</p>
+										<h1 class="zero gfont-1" th:text="#{main.free.shipping}"></h1>
+										<p th:text="#{main.order.over}"></p>
 									</div>
 								</div>
 							</div>
@@ -135,8 +134,8 @@
 								<div class="single-support">
 									<i class="fa fa-money"></i>
 									<div class="support-text">
-										<h1 class="zero gfont-1">Money back 100%</h1>
-										<p>Within 30 Days after delivery</p>
+										<h1 class="zero gfont-1" th:text="#{main.money.back}"></h1>
+										<p th:text="#{main.delivery}"></p>
 									</div>
 								</div>
 							</div>
@@ -146,8 +145,8 @@
 								<div class="single-support">
 									<i class="fa fa-phone-square"></i>
 									<div class="support-text">
-										<h1 class="zero gfont-1">Phone: 0123456789</h1>
-										<p>Order Online Now !</p>
+										<h1 class="zero gfont-1" th:text="#{main.phone}"></h1>
+										<p th:text="#{main.buy.online}"></p>
 									</div>
 								</div>
 							</div>
@@ -166,29 +165,29 @@
 		                    <div class="quick-access">
 		                    	<div class="search-by-category">
 		                    		<div class="search-container">
-			                    		<select>
-			                    			<option class="all-cate">All Categories</option>
-											<optgroup class="cate-item-head" label="Cameras & Photography">
-												<option class="cate-item-title">Handbags</option>
-												<option class="c-item">Blouses And Shirts</option>
-												<option class="c-item">Clouthes</option>
+										<select>
+											<option class="all-cate" th:text="#{main.cate.all.categories}"></option>
+											<optgroup class="cate-item-head" th:label="#{main.cate.cameras.and.photography}">
+												<option class="cate-item-title" th:text="#{main.cate.handbags}">Handbags</option>
+												<option class="c-item" th:text="#{main.cate.blouses.and.shirts}">Blouses And Shirts</option>
+												<option class="c-item" th:text="#{main.cate.clouthes}"></option>
 											</optgroup>
-											<optgroup class="cate-item-head" label="Laptop & Computer">
+											<optgroup class="cate-item-head" th:label="#{main.cate.laptop.and.computer}">
 												<option class="cate-item-title">Apple</option>
 												<option class="c-item">Dell</option>
 												<option class="c-item">Hp</option>
 												<option class="c-item">Sony</option>
 											</optgroup>
-											<optgroup class="cate-item-head" label="Electronic">
-												<option class="c-item">Mobile</option>
-												<option class="c-item">Speaker</option>
-												<option class="c-item">Headphone</option>
+											<optgroup class="cate-item-head" th:label="#{main.cate.electronic}">
+												<option class="c-item" th:text="#{main.cate.mobile}">Mobile</option>
+												<option class="c-item" th:text="#{main.cate.speaker}">Speaker</option>
+												<option class="c-item" th:text="#{main.cate.headphone}">Headphone</option>
 											</optgroup>
-			                    		</select>
+										</select>
 		                    		</div>
 		                    		<div class="header-search">
 		                    			<form action="#">
-			                    			<input type="text" placeholder="Search">
+			                    			<input type="text" th:placeholder="#{main.search}">
 			                    			<button type="submit"><i class="fa fa-search"></i></button>
 		                    			</form>
 		                    		</div>
@@ -199,7 +198,7 @@
 			                    			<a href="/cart">
 			                    				<span class="cart-icon"><i class="fa fa-shopping-cart"></i></span>
 			                    				<span class="cart-total">
-			                    					<span class="cart-title">shopping cart</span>
+			                    					<span class="cart-title" th:text="#{main.shopping.cart}"></span>
 				                    				<span class="cart-item">2 item(s)- </span>
 				                    				<span class="top-cart-price">$365.00</span>
 			                    				</span>
@@ -265,17 +264,17 @@
 							<div class="mainmenu">
 								<nav>
 									<ul>
-										<li><a href="/">Home</a>
+										<li><a href="/" th:text="#{main.menu.home}"></a>
 											<ul>
 												<li><a href="/">Home Versions 1</a></li>
 												<li><a href="index-2.html">Home Versions 2</a></li>
 											</ul>
 										</li>
-										<li><a href="/about">About Us</a></li>
-										<li class="hot"><a href="/shop">Bestseller Products</a></li>
-										<li class="new"><a href="/myShopList">New Products</a></li>
-										<li><a href="/shop">Special Products</a></li>
-										<li><a href="#">Pages</a>
+										<li><a href="/about" th:text="#{main.menu.about.us}"></a></li>
+										<li class="hot"><a href="/shop" th:text="#{main.menu.bestseller.products}"></a></li>
+										<li class="new"><a href="/myShopList" th:text="#{main.menu.new.products}"></a></li>
+										<li><a href="/shop" th:text="#{main.menu.special.products}"></a></li>
+										<li><a href="#" th:text="#{main.menu.pages}"></a>
 											<ul>
 												<li><a href="/cart">Cart</a></li>
 												<li><a href="/checkout">Checkout</a></li>
@@ -287,7 +286,7 @@
 												<li><a href="/wishlist">Wish List</a></li>
 											</ul>
 										</li>
-										<li><a href="/contact">Contact Us</a></li>
+										<li><a href="/contact" th:text="#{main.menu.contact.us}"></a></li>
 									</ul>
 								</nav>
 							</div>
@@ -349,163 +348,163 @@
 				<div class="row">
 					<div class="col-md-3">
 						<!-- CATEGORY-MENU-LIST START -->
-                        <div class="left-category-menu hidden-sm hidden-xs">
-                            <div class="left-product-cat">
-                                <div class="category-heading">
-                                    <h2>categories</h2>
-                                </div>
-                                <div class="category-menu-list">
-                                    <ul>
-                                        <!-- Single menu start -->
-                                        <li class="arrow-plus">
-                                            <a href="#">Cameras & Photography</a>
-                                            <!--  MEGA MENU START -->
-                                            <div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
-                                                    <div class="cat-left-drop-menu-left">
-                                                        <a class="menu-item-heading" href="#">Cameras</a>
-                                                        <ul>
-                                                            <li><a href="#">Compact</a></li>
-                                                            <li><a href="#">Bridge</a></li>
-                                                            <li><a href="#">DSLR </a></li>
-                                                            <li><a href="#">Mirrorless</a></li>
-                                                        </ul>
-                                                    </div>
-                                                <div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
-                                                    <a href="#"><img src="/img/megamenu/cameras.jpg" alt="Product"></a>
-                                                </div>
-                                            </div>
-                                            <!-- MEGA MENU END -->
-                                        </li>
-                                        <!-- Single menu end -->
-                                        <!-- Single menu start -->
-                                        <li class="arrow-plus">
-                                            <a href="#">Tv & Audio</a>
-                                            <!--  MEGA MENU START -->
-                                            <div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
-                                                    <div class="cat-left-drop-menu-left">
-                                                        <a class="menu-item-heading" href="#">TV</a>
-                                                        <ul>
-                                                            <li><a href="#">QLED</a></li>
-                                                            <li><a href="#">OLED</a></li>
-                                                            <li><a href="#">LED</a></li>
-                                                            <li><a href="#">LCD</a></li>
-                                                            <li><a href="#">DLP</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="cat-left-drop-menu-left">
-                                                        <a class="menu-item-heading" href="#">Audio</a>
-                                                        <ul>
-                                                            <li><a href="#">Amplifiers</a></li>
-                                                            <li><a href="#">CD & DVD Players</a></li>
-                                                            <li><a href="#">Audio Controllers</a></li>
-                                                            <li><a href="#">Pro DJ Mixers</a></li>
-                                                            <li><a href="#">Headphones</a></li>
-                                                            <li><a href="#">Microphones</a></li>
-                                                            <li><a href="#">Mixers</a></li>
-                                                            <li><a href="#">Passive Speakers</a></li>
-                                                        </ul>
-                                                    </div>
-                                                <div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
-                                                    <a href="#"><img src="/img/megamenu/tv&audio.png" alt="Product"></a>
-                                                </div>
-                                            </div>
-                                            <!-- MEGA MENU END -->
-                                        </li>
-                                        <!-- Single menu end -->
-                                        <!-- Single menu start -->
-                                        <li class="arrow-plus">
-                                            <a href="#">SmartPhones & Tablets</a>
-                                            <!--  MEGA MENU START -->
-                                            <div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
-                                                <div class="cat-left-drop-menu-left">
-                                                    <a class="menu-item-heading" href="#">SmartPhones</a>
-                                                    <ul>
-                                                        <li><a href="#">iPhone</a></li>
-                                                        <li><a href="#">Windows phones</a></li>
-                                                        <li><a href="#">Android</a></li>
-                                                        <li><a href="#">Amazon's Fire Phone</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="cat-left-drop-menu-left">
-                                                    <a class="menu-item-heading" href="#">Tablets</a>
-                                                    <ul>
-                                                        <li><a href="#">Compressed</a></li>
-                                                        <li><a href="#">Sugar-coated</a></li>
-                                                        <li><a href="#">Film-Coated</a></li>
-                                                        <li><a href="#">Effervescent</a></li>
-                                                        <li><a href="#">Enteric-coated</a></li>
-                                                        <li><a href="#">Chewable</a></li>
-                                                        <li><a href="#">Buccal and Sublingual</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
-                                                    <a href="#"><img src="/img/megamenu/smartphone&tablet.jpg"
-                                                                     alt="Product"></a>
-                                                </div>
-                                            </div>
-                                            <!-- MEGA MENU END -->
-                                        </li>
-                                        <!-- Single menu end -->
-                                        <!-- Single menu start -->
-                                        <li class="arrow-plus">
-                                            <a href="#">Laptop & Computer</a>
-                                            <!--  MEGA MENU START -->
-                                            <div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
-                                                <div class="cat-left-drop-menu-left">
-                                                    <a class="menu-item-heading" href="#">Laptops</a>
-                                                    <ul>
-                                                        <li><a href="#">Notebook</a></li>
-                                                        <li><a href="#">Ultraportable</a></li>
-                                                        <li><a href="#">Ultrabook</a></li>
-                                                        <li><a href="#">Chromebook</a></li>
-                                                        <li><a href="#">MacBook</a></li>
-                                                        <li><a href="#">Convertible (2-in-1)</a></li>
-                                                        <li><a href="#">Netbook</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="cat-left-drop-menu-left">
-                                                    <a class="menu-item-heading" href="#">Computers</a>
-                                                    <ul>
-                                                        <li><a href="#">Supercomputer</a></li>
-                                                        <li><a href="#">Mainframe computer</a></li>
-                                                        <li><a href="#">Minicomputer</a></li>
-                                                        <li><a href="#">Workstation</a></li>
-                                                        <li><a href="#">PC (Personal Computer)</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
-                                                    <a href="#"><img src="/img/megamenu/laptop&computer.jpg" alt="Product"></a>
-                                                </div>
-                                            </div>
-                                            <!-- MEGA MENU END -->
-                                        </li>
-                                        <!-- Single menu end -->
-                                        <!-- Single menu start -->
-                                        <!--	                                    <li><a href="#">Sony</a></li>-->
-                                        <!-- Single menu end -->
-                                        <!-- Single menu start -->
-                                        <li class="arrow-plus">
-                                            <a href="#">Mobile</a>
-                                            <!--  MEGA MENU START -->
-                                            <div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
-                                                    <div class="cat-left-drop-menu-left">
-                                                        <a class="menu-item-heading" href="#">Mobile</a>
-                                                        <ul>
-                                                            <li><a href="#">Basic Phones</a></li>
-                                                            <li><a href="#">Feature Phones</a></li>
-                                                        </ul>
-                                                    </div>
-                                                <div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
-                                                    <a href="#"><img src="/img/megamenu/phones.jpg" alt="Product"></a>
-                                                </div>
-                                            </div>
-                                            <!-- MEGA MENU END -->
-                                        </li>
-                                        <!-- Single menu end -->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+						<div class="left-category-menu hidden-sm hidden-xs">
+							<div class="left-product-cat">
+								<div class="category-heading">
+									<h2 th:text="#{main.sidebar.categories}"></h2>
+								</div>
+								<div class="category-menu-list">
+									<ul>
+										<!-- Single menu start -->
+										<li class="arrow-plus">
+											<a href="#" th:text="#{main.cate.cameras.and.photography}"></a>
+											<!--  MEGA MENU START -->
+											<div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
+												<div class="cat-left-drop-menu-left">
+													<a class="menu-item-heading" href="#">Cameras</a>
+													<ul>
+														<li><a href="#">Compact</a></li>
+														<li><a href="#">Bridge</a></li>
+														<li><a href="#">DSLR </a></li>
+														<li><a href="#">Mirrorless</a></li>
+													</ul>
+												</div>
+												<div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
+													<a href="#"><img src="/img/megamenu/cameras.jpg" alt="Product"></a>
+												</div>
+											</div>
+											<!-- MEGA MENU END -->
+										</li>
+										<!-- Single menu end -->
+										<!-- Single menu start -->
+										<li class="arrow-plus">
+											<a href="#" th:text="#{main.sidebar.tv.audio}"></a>
+											<!--  MEGA MENU START -->
+											<div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
+												<div class="cat-left-drop-menu-left">
+													<a class="menu-item-heading" href="#">TV</a>
+													<ul>
+														<li><a href="#">QLED</a></li>
+														<li><a href="#">OLED</a></li>
+														<li><a href="#">LED</a></li>
+														<li><a href="#">LCD</a></li>
+														<li><a href="#">DLP</a></li>
+													</ul>
+												</div>
+												<div class="cat-left-drop-menu-left">
+													<a class="menu-item-heading" href="#">Audio</a>
+													<ul>
+														<li><a href="#">Amplifiers</a></li>
+														<li><a href="#">CD & DVD Players</a></li>
+														<li><a href="#">Audio Controllers</a></li>
+														<li><a href="#">Pro DJ Mixers</a></li>
+														<li><a href="#">Headphones</a></li>
+														<li><a href="#">Microphones</a></li>
+														<li><a href="#">Mixers</a></li>
+														<li><a href="#">Passive Speakers</a></li>
+													</ul>
+												</div>
+												<div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
+													<a href="#"><img src="/img/megamenu/tv&audio.png" alt="Product"></a>
+												</div>
+											</div>
+											<!-- MEGA MENU END -->
+										</li>
+										<!-- Single menu end -->
+										<!-- Single menu start -->
+										<li class="arrow-plus">
+											<a href="#" th:text="#{main.sidebar.smartphones.tablets}"></a>
+											<!--  MEGA MENU START -->
+											<div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
+												<div class="cat-left-drop-menu-left">
+													<a class="menu-item-heading" href="#">SmartPhones</a>
+													<ul>
+														<li><a href="#">iPhone</a></li>
+														<li><a href="#">Windows phones</a></li>
+														<li><a href="#">Android</a></li>
+														<li><a href="#">Amazon's Fire Phone</a></li>
+													</ul>
+												</div>
+												<div class="cat-left-drop-menu-left">
+													<a class="menu-item-heading" href="#">Tablets</a>
+													<ul>
+														<li><a href="#">Compressed</a></li>
+														<li><a href="#">Sugar-coated</a></li>
+														<li><a href="#">Film-Coated</a></li>
+														<li><a href="#">Effervescent</a></li>
+														<li><a href="#">Enteric-coated</a></li>
+														<li><a href="#">Chewable</a></li>
+														<li><a href="#">Buccal and Sublingual</a></li>
+													</ul>
+												</div>
+												<div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
+													<a href="#"><img src="/img/megamenu/smartphone&tablet.jpg"
+																	 alt="Product"></a>
+												</div>
+											</div>
+											<!-- MEGA MENU END -->
+										</li>
+										<!-- Single menu end -->
+										<!-- Single menu start -->
+										<li class="arrow-plus">
+											<a href="#" th:text="#{main.sidebar.laptop.computer}"></a>
+											<!--  MEGA MENU START -->
+											<div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
+												<div class="cat-left-drop-menu-left">
+													<a class="menu-item-heading" href="#">Laptops</a>
+													<ul>
+														<li><a href="#">Notebook</a></li>
+														<li><a href="#">Ultraportable</a></li>
+														<li><a href="#">Ultrabook</a></li>
+														<li><a href="#">Chromebook</a></li>
+														<li><a href="#">MacBook</a></li>
+														<li><a href="#">Convertible (2-in-1)</a></li>
+														<li><a href="#">Netbook</a></li>
+													</ul>
+												</div>
+												<div class="cat-left-drop-menu-left">
+													<a class="menu-item-heading" href="#">Computers</a>
+													<ul>
+														<li><a href="#">Supercomputer</a></li>
+														<li><a href="#">Mainframe computer</a></li>
+														<li><a href="#">Minicomputer</a></li>
+														<li><a href="#">Workstation</a></li>
+														<li><a href="#">PC (Personal Computer)</a></li>
+													</ul>
+												</div>
+												<div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
+													<a href="#"><img src="/img/megamenu/laptop&computer.jpg" alt="Product"></a>
+												</div>
+											</div>
+											<!-- MEGA MENU END -->
+										</li>
+										<!-- Single menu end -->
+										<!-- Single menu start -->
+										<!--	                                    <li><a href="#">Sony</a></li>-->
+										<!-- Single menu end -->
+										<!-- Single menu start -->
+										<li class="arrow-plus">
+											<a href="#" th:text="#{main.sidebar.mobile}"></a>
+											<!--  MEGA MENU START -->
+											<div class="cat-left-drop-menu cat-left-drop-menu-photo-contain">
+												<div class="cat-left-drop-menu-left">
+													<a class="menu-item-heading" href="#">Mobile</a>
+													<ul>
+														<li><a href="#">Basic Phones</a></li>
+														<li><a href="#">Feature Phones</a></li>
+													</ul>
+												</div>
+												<div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
+													<a href="#"><img src="/img/megamenu/phones.jpg" alt="Product"></a>
+												</div>
+											</div>
+											<!-- MEGA MENU END -->
+										</li>
+										<!-- Single menu end -->
+									</ul>
+								</div>
+							</div>
+						</div>
 						<!-- END CATEGORY-MENU-LIST -->
 					</div>
 					<div class="col-md-9">

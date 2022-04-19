@@ -8,6 +8,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -15,23 +19,24 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public User create(User user) {
+    public void create(User user) {
             String encode = passwordEncoder.encode(user.getPassword());
             user.setPassword(encode);
             user.setRole(Role.USER);
-            return userRepository.save(user);
+            userRepository.save(user);
     }
 
     public void save(User user) {
         userRepository.save(user);
     }
 
-//    public List<String> errorMsgs(User user, String confirmPassword) {
-//        List<String> errorMsgs = new ArrayList<>();
-//        if(!user.getPassword().equals(confirmPassword)) {
-//            errorMsgs.add("Passwords doesnt match");
-//        }
-//        return errorMsgs;
-//    }
+    public Optional<User> findByToken(UUID fromString) {
+        return userRepository.findByToken(fromString);
+    }
+
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
 
 }
