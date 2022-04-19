@@ -156,51 +156,93 @@
 					<div class="row">
 						<div class="col-md-3 col-sm-12">
 							<div class="logo">
-								<a href="/" title="Malias"><img src="/img/logo.png" alt="Malias"></a>
+								<a href="/" title="TMP"><img src="../img/logo2.png" alt="TMP"></a>
 							</div>
 						</div>
 						<div class="col-md-9 col-sm-12">
-		                    <div class="quick-access">
-		                    	<div class="search-by-category">
-		                    		<div class="search-container">
+							<div class="quick-access">
+								<div class="search-by-category">
+									<div class="search-container">
 										<select>
-											<option class="all-cate" th:text="#{main.cate.all.categories}"></option>
-											<optgroup class="cate-item-head" th:label="#{main.cate.cameras.and.photography}">
-												<option class="cate-item-title" th:text="#{main.cate.handbags}">Handbags</option>
-												<option class="c-item" th:text="#{main.cate.blouses.and.shirts}">Blouses And Shirts</option>
-												<option class="c-item" th:text="#{main.cate.clouthes}"></option>
+											<option class="all-cate">All Categories</option>
+											<optgroup class="cate-item-head" label="Cameras">
+												<option class="cate-item-title">Compact</option>
+												<option class="c-item">Bridge</option>
+												<option class="c-item">DSLR</option>
+												<option class="c-item">Mirrorless</option>
 											</optgroup>
-											<optgroup class="cate-item-head" th:label="#{main.cate.laptop.and.computer}">
-												<option class="cate-item-title">Apple</option>
-												<option class="c-item">Dell</option>
-												<option class="c-item">Hp</option>
-												<option class="c-item">Sony</option>
+											<optgroup class="cate-item-head" label="TV">
+												<option class="cate-item-title">QLED</option>
+												<option class="c-item">OLED</option>
+												<option class="c-item">LED</option>
+												<option class="c-item">LCD</option>
+												<option class="c-item">DLP</option>
 											</optgroup>
-											<optgroup class="cate-item-head" th:label="#{main.cate.electronic}">
-												<option class="c-item" th:text="#{main.cate.mobile}">Mobile</option>
-												<option class="c-item" th:text="#{main.cate.speaker}">Speaker</option>
-												<option class="c-item" th:text="#{main.cate.headphone}">Headphone</option>
+											<optgroup class="cate-item-head" label="Audio">
+												<option class="cate-item-title">Amplifiers</option>
+												<option class="c-item">CD & DVD Players</option>
+												<option class="c-item">Audio Controllers</option>
+												<option class="c-item">Pro DJ Mixers</option>
+												<option class="c-item">Headphones</option>
+												<option class="c-item">Microphones</option>
+												<option class="c-item">Mixers</option>
+												<option class="c-item">Passive Speakers</option>
+											</optgroup>
+											<optgroup class="cate-item-head" label="SmartPhones">
+												<option class="cate-item-title">IPhone</option>
+												<option class="c-item">Windows Phones</option>
+												<option class="c-item">Android</option>
+												<option class="c-item">Amazon's Fire Phone</option>
+											</optgroup>
+											<optgroup class="cate-item-head" label="Tablets">
+												<option class="cate-item-title">Compressed</option>
+												<option class="c-item">Sugar-Coated</option>
+												<option class="c-item">Film-Coated</option>
+												<option class="c-item">Effervescent</option>
+												<option class="c-item">Enteric-Coated</option>
+												<option class="c-item">Chewable</option>
+												<option class="c-item">Buccal And Sublingual</option>
+											</optgroup>
+											<optgroup class="cate-item-head" label="Laptops">
+												<option class="c-item">Notebook</option>
+												<option class="c-item">Ultraportable</option>
+												<option class="c-item">Ultrabook</option>
+												<option class="c-item">Chromebook</option>
+												<option class="c-item">MacBook</option>
+												<option class="c-item">Convertible (2 in 1)</option>
+												<option class="c-item">Netbook</option>
+											</optgroup>
+											<optgroup class="cate-item-head" label="Computers">
+												<option class="c-item">Supercomputer</option>
+												<option class="c-item">Mainframe Computer</option>
+												<option class="c-item">Minicomputer</option>
+												<option class="c-item">Workstation</option>
+												<option class="c-item">PC (Personal Computer)</option>
+											</optgroup>
+											<optgroup class="cate-item-head" label="Mobile">
+												<option class="c-item">Basic Phones</option>
+												<option class="c-item">Feature Phones</option>
 											</optgroup>
 										</select>
-		                    		</div>
-		                    		<div class="header-search">
-		                    			<form action="#">
-			                    			<input type="text" th:placeholder="#{main.search}">
-			                    			<button type="submit"><i class="fa fa-search"></i></button>
-		                    			</form>
-		                    		</div>
-		                    	</div>
-		                    	<div class="top-cart">
-		                    		<ul>
-		                    			<li>
-			                    			<a href="/cart">
-			                    				<span class="cart-icon"><i class="fa fa-shopping-cart"></i></span>
-			                    				<span class="cart-total">
-			                    					<span class="cart-title" th:text="#{main.shopping.cart}"></span>>
+									</div>
+									<div class="header-search">
+										<form action="#">
+											<input type="text" placeholder="Search">
+											<button type="submit"><i class="fa fa-search"></i></button>
+										</form>
+									</div>
+								</div>
+								<div class="top-cart">
+									<ul>
+										<li>
+											<a href="/cart">
+												<span class="cart-icon"><i class="fa fa-shopping-cart"></i></span>
+												<span class="cart-total">
+			                    					<span class="cart-title">shopping cart</span>
 				                    				<span class="cart-item">2 item(s)- </span>
 				                    				<span class="top-cart-price">$365.00</span>
 			                    				</span>
-			                    			</a>
+											</a>
 											<div class="mini-cart-content">
 												<div class="cart-img-details">
 													<div class="cart-img-photo">
@@ -244,11 +286,11 @@
 													</span>
 												</div>
 											</div>
-		                    			</li>
-		                    		</ul>
-		                    	</div>
-		                    </div>
-		                </div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 					<!-- End logo & Search Box -->
 				</div>
@@ -5335,7 +5377,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="area-title">
-								<h3 class="title-group border-red gfont-1">Brand Logo</h3>
+								<h3 class="title-group border-red gfont-1">OUR PARTNERS</h3>
 							</div>
 						</div>
 					</div>
@@ -5343,47 +5385,92 @@
 						<div class="active-brand-logo">
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/1.png" alt=""></a>
+									<a href="#"><img src="../img/brand/Beko_logo_PNG2.png" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/2.png" alt=""></a>
+									<a href="#"><img src="../img/brand/Thomson_logo_PNG1.png" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/3.png" alt=""></a>
+									<a href="#"><img src="../img/brand/Viessman_logo_PNG1.png" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/4.png" alt=""></a>
+									<a href="#"><img src="../img/brand/Fujifilm_logo_PNG1.png" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/5.png" alt=""></a>
+									<a href="#"><img src="../img/brand/ATI_logo_PNG1.png" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/6.png" alt=""></a>
+									<a href="#"><img src="../img/brand/Dolby_Digital_PNG3.png" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/1.png" alt=""></a>
+									<a href="#"><img src="../img/brand/Benq_logo_PNG1.png" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/2.png" alt=""></a>
+									<a href="#"><img src="../img/brand/EMC_logo_PNG2.png" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="single-brand-logo">
-									<a href="#"><img src="/img/brand/3.png" alt=""></a>
+									<a href="#"><img src="../img/brand/Vaio_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Kodak_Motion_Picture_Film_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Xperia_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Zanussi_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Polaroid_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Moulinex_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Emachines_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Logitech_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Genius_logo_PNG1.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="single-brand-logo">
+									<a href="#"><img src="../img/brand/Walkman_logo_PNG1.png" alt=""></a>
 								</div>
 							</div>
 						</div>
