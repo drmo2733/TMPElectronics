@@ -3,9 +3,6 @@ package com.example.tmpelectronics.service;
 
 import com.example.tmpelectronics.entity.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
@@ -42,6 +39,7 @@ public class MailService {
                 new MimeMessageHelper(mimeMessage, true, "UTF-8"); // true = multipart
         message.setSubject(subject);
         message.setTo(to);
+        message.setFrom("testyantext@gmail.com");
 
         message.setText(htmlContent, true); // true = isHtml
 

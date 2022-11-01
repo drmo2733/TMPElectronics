@@ -33,10 +33,15 @@ public class UserService {
     public Optional<User> findByToken(UUID fromString) {
         return userRepository.findByToken(fromString);
     }
+    public Optional<User> findByToken(String fromString) {
+        return userRepository.findByToken(fromString);
+    }
 
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
-
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 }
