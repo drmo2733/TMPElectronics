@@ -31,8 +31,9 @@ public class UserController {
 
     @PostMapping("/user/add")
     public String addUser(@ModelAttribute @Valid UserCredRequestDto userRequestDto, BindingResult bindingResult, @RequestParam("confirmPassword") String confirmPassword, ModelMap map, Locale locale) throws MessagingException {
+        Optional<User> byEmail = userService.findByEmail(userRequestDto.getEmail());
+        List<String> errors = new ArrayList<>();
         if (bindingResult.hasErrors()) {
-            List<String> errors = new ArrayList<>();
             for (ObjectError allError : bindingResult.getAllErrors()) {
                 errors.add(allError.getDefaultMessage());
             }
@@ -42,7 +43,14 @@ public class UserController {
             User user = mapper.map(userRequestDto, User.class);
 
             if (!user.getPassword().equals(confirmPassword)) {
-                map.addAttribute("errorMsgs", "Passwords doesnt match");
+                errors.add("Passwords doesnt match");
+                map.addAttribute("errors", errors);
+                return "account";
+            }
+
+            if(byEmail.isPresent()) {
+                errors.add("User by this email already exists");
+                map.addAttribute("errors", errors);
                 return "account";
             }
 
@@ -53,8 +61,7 @@ public class UserController {
             mailService.sendHtmlEmail(user.getEmail(),
                     "Welcome " + user.getName() + " " + user.getSurname(),
                     user,
-                    "You have successfully register " + user.getName() +
-                            " for activation please click on this url : http://localhost:8080/user/activate?token=" + user.getToken(),
+                    "http://localhost:8080/user/activate?token=" + user.getToken(),
                     "verify", locale);
         }
         return "redirect:/";
@@ -62,8 +69,8 @@ public class UserController {
 
     @GetMapping("/user/activate")
     public String activateUser(ModelMap map, @RequestParam String token) {
-        Optional<User> user = userService.findByToken(UUID.fromString(token));
-        if (user.isPresent()) {
+        Optional<User> user = userService.findByToken(token);
+        if (!user.isPresent()) {
             map.addAttribute("message", "User Does not exists");
             return "checkout";
         }

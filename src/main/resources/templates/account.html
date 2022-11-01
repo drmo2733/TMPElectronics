@@ -396,11 +396,11 @@
 							</div>
 						</div>
 					</div>
-					<div th:if="${errorMsgs != null}">
-						<ul style="list-style-type: none">
-							<li style="color: red"  th:text="${errorMsgs}" > </li>
-						</ul>
-					</div>
+<!--					<div th:if="${errorMsgs != null}">-->
+<!--						<ul style="list-style-type: none">-->
+<!--							<li style="color: red"  th:text="${errorMsgs}" > </li>-->
+<!--						</ul>-->
+<!--					</div>-->
 					<div th:if="${errors != null && !errors.isEmpty()}">
 						<ul style="list-style-type: none">
 							<li style="color: red" th:each="error: ${errors}" th:text="${error}" > </li>

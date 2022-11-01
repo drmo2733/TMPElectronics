@@ -1,6 +1,7 @@
 package com.example.tmpelectronics.dto;
 
 
+import com.example.tmpelectronics.constraint.ValidPassword;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ public class UserCredRequestDto {
     @NotBlank(message = "Surname can't be empty")
     private String surname;
     @NotNull
+    @ValidPassword
     @NotBlank(message = "Password is mandatory")
     private String password;
     @NotEmpty

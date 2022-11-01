@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind CSS Simple Email Template Example </title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/css/verify.css" rel="stylesheet">
 </head>
 <body>
 <div class="flex items-center justify-center min-h-screen p-5 bg-blue-100 min-w-screen">
@@ -23,9 +23,7 @@
 
         <p th:text="#{mail.verify.happy}"></p>
         <div class="mt-4">
-            <form th:action="${url}">
-                <button class="px-2 py-2 text-blue-200 bg-blue-600 rounded" th:text="#{mail.verify.click}"></button>
-            </form>
+            <a href="http://localhost:8080/" class="text-blue-600 underline" th:href="${url}">Link</a>
         </div>
     </div>
 </div>
